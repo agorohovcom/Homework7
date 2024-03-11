@@ -1,31 +1,48 @@
 public class Main {
     public static void main(String[] args) {
+        // Задача 1 (вариант с %)
+//        int finallyMoneySaved = 2_459_000;
+//        int monthCount = 0;
+//        double moneySavedNow = 0;
+//        int savedMoneyPerMonth = 15_000;
+//        double percentPerYear = 0.12;
+//        double percentPerMonth = percentPerYear / 12;       // 0.01
+//
+//        while (moneySavedNow < finallyMoneySaved) {
+//            moneySavedNow += (moneySavedNow + savedMoneyPerMonth) * percentPerMonth + savedMoneyPerMonth;
+//            monthCount++;
+//            System.out.printf("Месяц %d, сумма накоплений равна %.2f рублей\n", monthCount, moneySavedNow);
+//        }
+//
+//        System.out.printf("Сумма %d накоплена, потребовалось %d месяцев\n\n", finallyMoneySaved, monthCount);
 
-        // Задание 1
-        int finallyMoneySaved = 2_459_000;
+        // Задача 1 (вариант без %)
+        int requiredAmount = 2_459_000;
         int monthCount = 0;
-        double moneySavedNow = 0;
-        int savedMoneyPerMonth = 15_000;
-        double percentPerYear = 0.12;
-        double percentPerMonth = percentPerYear / 12;       // 0.01
+        int moneySavedNow = 0;
+        int addedMoneyPerMonth = 15_000;
 
-        while (moneySavedNow < finallyMoneySaved) {
-            moneySavedNow += (moneySavedNow + savedMoneyPerMonth) * percentPerMonth + savedMoneyPerMonth;
+        while (moneySavedNow < requiredAmount) {
+            moneySavedNow += addedMoneyPerMonth;
             monthCount++;
-            System.out.printf("Месяц %d, сумма накоплений равна %.2f рублей\n", monthCount, moneySavedNow);
+            System.out.printf("Месяц %d, сумма накоплений равна %d рублей\n", monthCount, moneySavedNow);
         }
 
-        System.out.printf("Сумма %d накоплена, потребовалось %d месяцев\n\n", finallyMoneySaved, monthCount);
+        System.out.printf("Сумма %d накоплена, потребовалось %d месяцев\n\n", requiredAmount, monthCount);
 
         // Задача 2
         int i = 0;
+
         while (i < 10) {
             System.out.print(++i + " ");
         }
+
         System.out.println();
+
         for (; i > 0; i--) {
             System.out.print(i + " ");
         }
+
         System.out.println();
         System.out.println();
 
@@ -40,6 +57,7 @@ public class Main {
             population += births - deaths;
             System.out.printf("Год %d, численность населения составляет %d\n", y, population);
         }
+
         System.out.println();
 
         // Задача 4
@@ -97,6 +115,20 @@ public class Main {
 
         for (int f = firstFriday; f <= daysInMonth; f += 7) {
             System.out.printf("Сегодня пятница, %d-е число. Необходимо подготовить отчет\n", f);
+        }
+
+        System.out.println();
+
+        // Задача 8
+        int currentYear = 2024;
+        int cometComingPeriod = 79;
+        int startObservations = currentYear - 200;
+        int endObservations = currentYear + 100;
+
+        for (int c = 0; c <= endObservations; c += cometComingPeriod) {
+            if (c >= startObservations) {
+                System.out.println(c);
+            }
         }
     }
 }
